@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Tavlo.app</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Mustica+Pro&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #000;
+      width: 100vw;
+      overflow-x: hidden;
+    }
+    header {
+      width: 100vw;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      position: sticky;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+    .logo {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    nav {
+      display: flex;
+      gap: 3rem;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: #000;
+      transition: color 0.2s ease;
+    }
+    nav a:hover {
+      color: #21BEFE;
+    }
+    .about-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6rem;
+      min-height: 80vh;
+      font-family: 'Mustica Pro', sans-serif;
+    }
+    .about-text {
+      flex: 1;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: left;
+      padding-right: 2rem;
+    }
+    .about-text a {
+      color: #21BEFE;
+      text-decoration: none;
+    }
+    .about-text a:hover {
+      text-decoration: underline;
+    }
+    .about-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .about-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1rem;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+    }
+    footer a {
+      color: #21BEFE;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+      }
+      .about-text {
+        padding-right: 0;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Tavlo.app</div>
+    <nav>
+      <a href="./">Home</a>
+      <a href="./about">About</a>
+    </nav>
+  </header>
+
+  <section class="about-section">
+    <div class="about-text">
+      <p>
+        This bot was created by Logan Tuttle as part of his HCDE 351 Final project. He is a Human Centered Design Major at the University of Washington.
+        You can check out his <a href="https://www.linkedin.com/in/uw-logan-tuttle/" target="_blank">LinkedIn</a> and his
+        <a href="https://loganhcde.github.io/" target="_blank">portfolio website</a>.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="about image.png" alt="Tavlo teaching example captions">
+    </div>
+  </section>
+
+  <footer>
+    <p>© Tavlo bot 2025 | <a href="./about">About</a> | <a href="https://www.linkedin.com/in/uw-logan-tuttle/" target="_blank">LinkedIn</a></p>
+  </footer>
+</body>
+</html>
