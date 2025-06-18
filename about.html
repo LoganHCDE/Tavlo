@@ -6,18 +6,42 @@
   <title>About - Tavlo.app</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Mustica+Pro&display=swap" rel="stylesheet">
   <style>
+    /*
+      General CSS Reset and Global Settings
+    */
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
       background-color: #ffffff;
       color: #000;
-      width: 100vw;
-      overflow-x: hidden;
+      width: 100%;
+      height: 100%; /* Required for sticky footer */
     }
+
+    /*
+      Sticky Footer Implementation:
+      Body is a flex container, pushing the main content to take up available space.
+    */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex-grow: 1; /* Allows main content to grow and push footer down */
+    }
+
+    /*
+      Desktop Header & Navigation
+    */
     header {
-      width: 100vw;
-      box-sizing: border-box;
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -28,14 +52,17 @@
       backdrop-filter: blur(8px);
       z-index: 10;
     }
+
     .logo {
       font-size: 3rem;
       font-weight: 800;
     }
+
     nav {
       display: flex;
       gap: 3rem;
     }
+
     nav a {
       font-weight: 600;
       font-size: 1.5rem;
@@ -43,17 +70,22 @@
       color: #000;
       transition: color 0.2s ease;
     }
+
     nav a:hover {
       color: #21BEFE;
     }
+
+    /*
+      Desktop About Section
+    */
     .about-section {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 6rem;
-      min-height: 80vh;
       font-family: 'Mustica Pro', sans-serif;
     }
+
     .about-text {
       flex: 1;
       font-size: 2rem;
@@ -61,23 +93,31 @@
       text-align: left;
       padding-right: 2rem;
     }
+
     .about-text a {
       color: #21BEFE;
       text-decoration: none;
     }
+
     .about-text a:hover {
       text-decoration: underline;
     }
+
     .about-image {
       flex: 1;
       display: flex;
       justify-content: center;
     }
+
     .about-image img {
       max-width: 100%;
       height: auto;
       border-radius: 1rem;
     }
+
+    /*
+      Footer
+    */
     footer {
       background-color: #333;
       color: white;
@@ -85,24 +125,69 @@
       padding: 2rem;
       font-size: 1rem;
     }
+
     footer a {
       color: #21BEFE;
       margin: 0 1rem;
       text-decoration: none;
     }
+
     footer a:hover {
       text-decoration: underline;
     }
+
+    /*
+      Mobile Responsiveness using Media Query
+      This block contains all the style adjustments for screens 768px or smaller.
+    */
     @media (max-width: 768px) {
+      /* Mobile Header: Keep items on one line, reduce sizes to fit. */
+      header {
+        padding: 1rem;
+      }
+
+      .logo {
+        font-size: 1.5rem; /* Reduced size to fit on one line */
+      }
+
+      nav {
+        gap: 1rem; /* Reduced gap between nav links */
+      }
+
+      nav a {
+        font-size: 1rem; /* Reduced size to fit */
+      }
+      
+      /* Mobile About Section: Stack content vertically and adjust padding. */
       .about-section {
         flex-direction: column;
         text-align: center;
         padding: 2rem;
       }
+
+      /* Mobile Text: Reduce margin to close gap with image. */
       .about-text {
         padding-right: 0;
-        font-size: 1.5rem;
-        text-align: center;
+        font-size: 1.2rem;
+        text-align: left;
+        margin-bottom: 1.5rem; /* Reduced margin to fix large gap */
+      }
+
+      /* Mobile Image: Set a max-width and center to prevent distortion. */
+      .about-image img {
+        max-width: 90%; /* Smaller max-width to prevent distortion */
+        height: auto; /* Ensures aspect ratio is maintained */
+        display: block;
+        margin: 0 auto; /* Centers the smaller image */
+      }
+
+      /* Mobile Footer: Ensure text stays on one line. */
+      footer {
+        padding: 1.5rem 1rem;
+      }
+
+      footer a {
+          margin: 0 0.5rem; /* Slightly reduce margin for smaller screens */
       }
     }
   </style>
@@ -116,18 +201,20 @@
     </nav>
   </header>
 
-  <section class="about-section">
-    <div class="about-text">
-      <p>
-        This bot was created by Logan Tuttle as part of his HCDE 351 Final project. He is a Human Centered Design Major at the University of Washington.
-        You can check out his <a href="https://www.linkedin.com/in/uw-logan-tuttle/" target="_blank">LinkedIn</a> and his
-        <a href="https://loganhcde.github.io/" target="_blank">portfolio website</a>.
-      </p>
-    </div>
-    <div class="about-image">
-      <img src="about image.png" alt="Tavlo teaching example captions">
-    </div>
-  </section>
+  <main>
+    <section class="about-section">
+      <div class="about-text">
+        <p>
+          This bot was created by Logan Tuttle as part of his HCDE 351 Final project. He is a Human Centered Design Major at the University of Washington.
+          You can check out his <a href="https://www.linkedin.com/in/uw-logan-tuttle/" target="_blank">LinkedIn</a> and his
+          <a href="https://loganhcde.github.io/" target="_blank">portfolio website</a>.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="./about image.png" alt="Tavlo teaching example captions">
+      </div>
+    </section>
+  </main>
 
   <footer>
     <p>© Tavlo bot 2025 | <a href="./about">About</a> | <a href="https://www.linkedin.com/in/uw-logan-tuttle/" target="_blank">LinkedIn</a></p>
